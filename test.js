@@ -33,3 +33,4 @@ const [newCategories, newRoot] = distributionCategories(categories, root, newCat
 console.log(newCategories, newRoot)
 
 console.log("Added new feature test")
+console.log("test")
