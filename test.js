@@ -31,3 +31,5 @@ const newCategoriesDelta = {
 const [newCategories, newRoot] = distributionCategories(categories, root, newCategoriesDelta);
 
 console.log(newCategories, newRoot)
+
+console.log("Added new feature test")
