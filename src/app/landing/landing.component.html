@@ -1,0 +1,158 @@
+<section class="relative z-10 bg-transparent grid gap-8 md:gap-14 p-4 md:py-14 md:px-16">
+  <div class="absolute overflow-hidden hidden md:block md:container -z-[1] inset-0 after:content-[''] after:absolute after:inset-0 after:bg-gradient-to-b after:from-[rgba(255,255,255,0)_85%] after:to-primary">
+    <img loading="lazy" src="./assets/images/header.webp" alt="" class="w-full">
+  </div>
+  <div class="flex flex-col gap-6">
+    <h1 class="font-bold leading-[1.25] text-[32px] md:text-[44px] xl:text-[52px]">
+      Stream on <span class="text-accent">KICK.</span> 
+      <br/>Double Your
+      <br/>Streaming Income
+    </h1>
+    <button class="px-3 py-3 bg-accent text-dark font-semibold rounded-md md:w-[186px]">Sign up now</button>
+  </div>
+  <div class="grid gap-6">
+    <div class="font-bold text-[20px] md:text-[28px] xl:text-[32px]">
+      <span>Why Streamers are Choosing Kick</span>
+    </div>
+    <div class="grid grid-cols-2 xl:grid-cols-4 gap-4">
+      @for (item of benefitsList; track $index) {
+        <div class="grid gap-2 md:gap-4 bg-secondary p-2 md:p-5 rounded-xl font-bold text-base md:text-[24px]">
+          <img width="auto" height="auto" loading="lazy" [src]="item.img" alt="" class="w-8 md:w-12"/>
+          <span>{{ item.caption }}</span>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+<section class="grid gap-10 xl:gap-14 px-4 pb-4 md:pb-14 md:px-16">
+  <div class="grid gap-4 lg:gap-6">
+    <div class="grid gap-2 font-bold">
+      <span class="text-2xl leading-[1.2]">Sub Earnings</span>
+      <div class="flex justify-between xl:justify-normal text-[18px]">
+        <div class="flex gap-4 text-sm xl:text-base">
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none"><circle cx="6" cy="6.5" r="6" fill="#23FF35"></circle></svg>
+            <span>Kick</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="13" viewBox="0 0 12 13" fill="none"><circle cx="6" cy="6.5" r="6" fill="#A253FF"></circle></svg>
+            <span>Other</span>
+          </div>
+        </div>
+        <div class="ml-6 text-sm xl:text-base">
+          <span>1 Sub = $5</span>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-8 xl:flex-row xl:gap-4">
+      <div class="flex items-center justify-center bg-[#181A1C] rounded-xl">
+        <img width="auto" height="auto" loading="lazy" class="rounded-xl" src="./assets/images/earning-table.png" alt="chart image">
+      </div>
+      <div class="flex flex-col gap-4 relative aspect-video w-full xl:w-[55%] xl:flex-grow xl:shrink-0">
+        <img loading="lazy" class="aspect-video w-full rounded-xl" src="./assets/images/video-placeholder.webp" alt="">
+        <div class="xl:absolute bottom-6 left-6 grid gap-2">
+          <span class="font-bold xl:text-[28px]">Kick Vs Twitch</span>
+          <span class="text-sm lg:text-base">Sub Earnings | 24/7 customer support | No ads interruption | Fair moderation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid gap-4 lg:gap-6">
+    <span class="font-bold leading-[1.2] text-2xl xl:text-[28px]">Why people join <span class="text-accent">Kick</span></span>
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
+      @for (testimonial of testimonialData; track $index) {
+        <div [ngClass]="{'hidden xl:grid': $index > 3}" class="grid gap-4 bg-primary-400 rounded-lg p-4 grid-rows-[1fr_auto]">
+          <div class="flex flex-col gap-4">
+            <div class="flex gap-2">
+              <div class="w-14 ">
+                <img loading="lazy" class="w-14 rounded-full" 
+                  width="56" height="56" 
+                  [src]="testimonial.img" 
+                  alt="author profile picture">
+              </div>
+              <div class="font-bold">
+                <div class="flex gap-2">
+                  <h4 class="text-lg">{{testimonial.name}}</h4>
+                  <img loading="lazy" width="16px" height="16px" src="./assets/svgs/verified-green.svg" alt="">
+                </div>
+                <span>{{testimonial.followers | number}} Followers</span>
+              </div>
+            </div>
+            <p class="self-start">
+              {{testimonial.message}}
+            </p>
+          </div>
+          <button class="bg-accent rounded-md px-4 py-2 text-dark font-semibold before:content-['♡'] before:mr-2">Follow</button>
+        </div>
+      }
+    </div>
+  </div>
+  <div class="grid gap-4 lg:gap-6">
+    <span class="font-bold leading-[1.2] text-2xl xl:text-[28px]">Give your growth a real <span class="text-accent">Kick</span></span>
+    <div class="flex flex-col gap-8 xl:items-stretch xl:flex-row xl:gap-4">
+      <div class="flex flex-col gap-4 relative w-full h-full xl:w-[55%] xl:flex-grow xl:shrink-0">
+        <video preload="none" class="rounded-xl aspect-video w-full h-full object-cover" [muted]="true" autoplay controls >
+          <source src="./assets/videos/koenigsegg.mp4" type="video/mp4">
+        </video>
+        <div class="xl:absolute bottom-6 left-6 grid gap-2">
+          <span class="font-bold xl:text-[28px]">Kick Vs Twitch</span>
+          <span class="text-sm lg:text-base">Sub Earnings | 24/7 customer support | No ads interruption | Fair moderation</span>
+        </div>
+      </div>
+      <div class="flex items-center justify-center bg-primary-400 rounded-xl">
+        <img loading="lazy" class="rounded-xl w-4/5" src="./assets/images/chart.png" alt="chart of kick growth">
+      </div>
+    </div>
+  </div>
+</section>
+<section class="grid gap-10 xl:gap-14 px-4 md:px-16">
+  <article class="grid gap-6">
+    <span class="font-bold text-2xl xl:text-[28px]">FAQ</span>
+    <div class="flex gap-4 font-bold [&>*]:p-2">
+      <div class="underline decoration-accent underline-offset-8"><span>Streaming</span></div>
+      <div><span>Content & Guidelines</span></div>
+      <div><span>Earnings</span></div>
+    </div>
+    <div class="grid gap-4 lg:grid-cols-2">
+      @for(question of faqQuestions; track $index)
+      {
+        <div class="flex flex-col">
+          <div class="relative has-[:checked]:bg-secondary p-3 bg-primary-400 text-[14px] rounded-lg">
+            <input class="opacity-0 absolute -z-[1]" type="checkbox" [id]="'streaming-' + $index">
+            <label class="cursor-pointer relative block font-bold after:content-['\276f'] after:absolute after:right-0 after:h-6 after:w-6 after:text-center after:rotate-90 sibling-checked:after:-rotate-90 after:transition-all after:duration-300" [for]="'streaming-' + $index">{{question.caption}}</label>
+            <div class="text-gray-400 sibling-checked:pt-4 sibling-checked:pb-2 max-h-0 overflow-hidden sibling-checked:max-h-24 transition-all duration-300 ease-in-out">
+              <p>{{question.message}}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </article>
+  <article class="flex flex-col gap-6 rounded-xl xl:py-20 xl:px-6 xl:bg-[url('./assets/images/support-team-lg.webp')] xl:bg-center xl:bg-cover xl:bg-no-repeat h-fit">
+    <div class="flex flex-col gap-2 font-bold leading-[1.2]">
+      <span class="text-2xl xl:text-[28px]"><span class="text-accent">Kick</span> us another question?</span>
+      <span class="text-lg">Contact our 24/7 Live support</span>
+    </div>
+    <div class="flex items-center gap-2 font-bold">
+      <div class="rounded-full border border-gray-700"><img loading="lazy" class="rounded-full" width="60" height="60" src="./assets/images/kick-support.png" alt=""></div>
+      <span>support team online</span>
+    </div>
+    <div>
+      <button class="p-3 rounded-md bg-[#3F4448] hover:bg-primary-400 transition-colors duration-300 font-bold w-full xl:w-fit">Contact support team</button>
+    </div>
+  </article>
+  <article class="flex xl:justify-end xl:items-center rounded-xl xl:py-20 xl:px-6 xl:bg-[url('./assets/images/signup.webp')] xl:bg-no-repeat xl:bg-cover xl:bg-center">
+    <div class="grid gap-6 grow xl:grow-0 lg:w-[512px]">
+      <span class="leading-[1.2] text-2xl font-bold">Are you ready to stream?</span>
+      <div class="grid gap-2 md:gap-4 grid-cols-2 font-bold leading-[1.2] text-sm md:text-lg">
+        @for (item of benefitsList; track $index) {
+          <div class="grid gap-2 md:gap-4 p-2 md:p-5 rounded-xl bg-secondary">
+            <img class="aspect-square w-8 md:w-12" width="auto" height="auto" loading="lazy" [src]="item.img" alt="">
+            <span>{{item.caption}}</span>
+          </div>
+        }
+      </div>
+      <button class="p-3 text-dark bg-accent rounded-md font-semibold hover:opacity-90 transition-all duration-300">Start streaming now</button>
+    </div>
+  </article>
+</section>
